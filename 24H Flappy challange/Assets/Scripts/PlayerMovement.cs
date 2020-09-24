@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(movementSpeed < 6f)
         {
-            movementSpeed += 0.01f * Time.deltaTime;
+            movementSpeed += 0.05f * Time.deltaTime;
         }    
     }
     private void FixedUpdate()
@@ -61,6 +61,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ++score;
+    }
+
+    public void PickCoin()
     {
         ++score;
     }
